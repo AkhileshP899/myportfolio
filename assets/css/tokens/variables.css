@@ -1,0 +1,84 @@
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+
+  /* 🎨 PRIMARY COLORS */
+  --primary-color: #2506ad;
+  --secondary-color: #011aff;
+  --accent-color: orange;
+  --highlight-color: aqua;
+
+  --color-pink: #ff02f7;
+  --color-orange: #ff7b00;
+  --color-cyan: #00d9ff;
+  --color-blue: #00bcd4;
+
+  /* 🌈 GRADIENTS */
+  --gradient-main: linear-gradient(90deg, #00dbde, #fc00ff);
+  --gradient-btn: linear-gradient(90deg, #4facfe, #00f2fe);
+  --gradient-skill: linear-gradient(90deg, #ff7b00, #ffb347);
+
+  /* 🌙 DARK MODE BASE */
+  --dark-bg: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+  --dark-card: rgba(255, 255, 255, 0.05);
+
+  /* ⚪ LIGHT MODE BASE */
+  --light-bg: #ffffff;
+  --light-card: #f7f7f7;
+
+  /* 🧱 TEXT COLORS */
+  --text-dark: #0e2431;
+  --text-light: #ffffff;
+
+  /* 🧩 SHADOWS */
+  --shadow-light: 0 5px 10px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+  /* 🔤 FONTS */
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Nunito", sans-serif;
+
+  /* 📏 SPACING */
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  /* 🔲 BORDER RADIUS */
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-round: 50%;
+
+  /* 🔤 FONT SIZES */
+  --text-sm: 1.2rem;
+  --text-md: 1.5rem;
+  --text-lg: 2rem;
+  --text-xl: 3rem;
+  --text-xxl: 5rem;
+
+  /* 🧱 CARD COLORS */
+  --card-light: #ffffff;
+  --card-dark: rgba(255, 255, 255, 0.05);
+
+  /* ⏱ TRANSITIONS */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
+  --transition-slow: 0.6s ease;
+
+  /* ================= ADVANCED DESIGN SYSTEM ================= */
+
+  --bg-main: #0f172a;
+  --bg-card: rgba(255,255,255,0.05);
+  --bg-glass: rgba(255,255,255,0.08);
+
+  --primary: #6c63ff;
+  --accent: #00f2fe;
+
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+
+  --radius: 16px;
+
+  --shadow: 0 10px 30px rgba(0,0,0,0.3);
+  --blur: blur(12px);
+}

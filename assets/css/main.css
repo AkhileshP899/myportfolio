@@ -1,0 +1,37 @@
+/* ================= BASE ================= */
+
+@import "./base/reset.css";
+@import "./base/typography.css";
+
+/* ================= TOKENS ================= */
+
+@import "./tokens/variables.css";
+
+/* ================= LAYOUT ================= */
+
+@import "./layout/container.css";
+@import "./layout/grid.css";
+
+/* ================= COMPONENTS ================= */
+
+@import "./components/button.css";
+@import "./components/card.css";
+@import "./components/navbar.css";
+@import "./components/timeline.css";
+
+/* ================= SECTIONS ================= */
+
+@import "./sections/home.css";
+@import "./sections/about.css";
+@import "./sections/skills.css";
+@import "./sections/education.css";
+@import "./sections/work.css";
+@import "./sections/architecture.css";
+@import "./sections/experience.css";
+@import "./sections/contact.css";
+@import "./sections/footer.css";
+
+/* ================= THEMES ================= */
+
+@import "./themes/light.css";
+@import "./themes/dark.css";

@@ -1,0 +1,39 @@
+[{
+        "name": "LinkCampus - A Social Platform",
+        "desc": "LinkCampus is an innovative social platform designed exclusively for college students. It leverages the power of the MERN stack to create a robust and dynamic environment with a real-time chat functionality.",
+        "image": "linkcampus",
+        "category": "mern",
+        "links": {
+            "code": "https://github.com/Akhilesh828"
+        }
+    },
+    {
+        "name": "DisKas - Forum Platform",
+        "desc": "DisKas is an online forum platform designed for programmers to ask questions and seek answers related to programming languages and development, built using a combination of PHP, MySQL, and JavaScript ",
+        "image": "diskas",
+        "category": "mern",
+        "links": {
+            "code": "https://github.com/Akhilesh828"
+        }
+    },
+    {
+        "name": "NetFlix Clone",
+        "desc": "NetFlix clone built using Next.js, Magic Authentication, Hasura Database & GraphQL.",
+        "image": "netflix",
+        "category": "mern",
+        "links": {
+            "code": "https://github.com/Akhilesh828"
+        }
+    },
+
+    {
+        "name": "NewPortal",
+        "desc": "NewsPortal built on the Laravel framework. The platform provides real-time updates on the latest news across a wide range of categories.",
+        "image": "newsportal",
+        "category": "mern",
+        "links": {
+            "code": "https://github.com/Akhilesh828"
+        }
+    }
+
+]

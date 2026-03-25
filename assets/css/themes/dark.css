@@ -1,0 +1,194 @@
+/* ================= DARK THEME ================= */
+
+body.dark {
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+/* ================= HEADER ================= */
+
+body.dark header {
+  background: var(--section-dark);
+}
+
+body.dark .navbar a {
+  color: var(--text-light);
+}
+
+/* ================= HOME ================= */
+
+body.dark .home {
+  animation: gradientMove 8s ease infinite;
+}
+
+body.dark .home .content p {
+  color: var(--text-light);
+}
+
+body.dark .home .image img:hover {
+  background-color: #ffffff;
+  box-shadow: 0 25px 40px rgba(255,255,255,0.6);
+}
+
+/* ================= ABOUT ================= */
+
+body.dark .about {
+  background: #0d1117;
+}
+
+body.dark .hero-role {
+  background: linear-gradient(90deg, #00e5ff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark .hero-impact {
+  color: #ffc107;
+}
+
+/* ================= SKILLS ================= */
+
+body.dark .skills {
+  background: #0f172a;
+}
+
+body.dark .skill-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+body.dark .skill-card h3 {
+  color: #ffffff;
+}
+
+body.dark .tags span {
+  background: rgba(255,255,255,0.1);
+  color: #ddd;
+}
+
+body.dark .skill-category {
+  background: #1e293b;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark .skill-items span {
+  background: linear-gradient(90deg, #00d9ff, #0ea5e9);
+}
+
+/* ================= EDUCATION ================= */
+
+body.dark .education {
+  background: var(--section-dark);
+}
+
+body.dark .education .box {
+  background: #1e293b;
+}
+
+body.dark .education .content p {
+  color: #cbd5e1;
+}
+
+/* ================= WORK ================= */
+
+body.dark .work .box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ================= ARCHITECTURE ================= */
+
+body.dark .arch-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+body.dark .arch-card h3 {
+  color: #00e5ff;
+}
+
+body.dark .arch-card:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+body.dark .data-flow {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(120, 7, 248, 0.9),
+    transparent
+  );
+}
+
+body.dark .pipeline span {
+  background: linear-gradient(90deg, #00d9ff, #0ea5e9);
+}
+
+/* ================= EXPERIENCE ================= */
+
+body.dark .experience {
+  background: var(--section-dark);
+}
+
+body.dark .exp-block {
+  background: rgba(255,255,255,0.05);
+}
+
+body.dark .exp-points div {
+  border-left: 3px solid #00d9ff;
+}
+
+/* ================= CONTACT ================= */
+
+body.dark .contact {
+  background: var(--section-dark);
+}
+
+body.dark .contact .container {
+  background: var(--card-dark);
+}
+
+body.dark .contact-text {
+  color: var(--text-light);
+}
+
+body.dark .contact-item {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-light);
+}
+
+body.dark .contact-item:hover {
+  background: rgba(0,217,255,0.1);
+}
+
+body.dark .contact-item a {
+  color: var(--highlight-color);
+}
+
+/* ================= FOOTER ================= */
+
+body.dark .footer {
+  background: #020617;
+}
+
+body.dark .footer .credit {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ================= BUTTON ================= */
+
+body.dark .btn {
+  background: var(--primary-color);
+  color: var(--text-light);
+}
+
+body.dark .btn.secondary {
+  border: 2px solid #00e5ff;
+  color: #00e5ff;
+}
+
+body.dark .btn.secondary:hover {
+  background: #00e5ff;
+  color: #000;
+}

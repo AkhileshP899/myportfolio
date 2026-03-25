@@ -1,0 +1,198 @@
+/* ================= TIMELINE BASE ================= */
+
+.experience .timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* vertical line */
+.experience .timeline::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  background: linear-gradient(to bottom, #ff7b00, #00d9ff);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -2;
+  box-shadow: 0 0 20px rgba(0,217,255,0.6);
+}
+
+/* ================= CONTAINER ================= */
+
+.experience .container {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+}
+
+/* ================= TIMELINE DOT ================= */
+
+.experience .container::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: -9px;
+  background: #ff7b00;
+  border-radius: 50%;
+  top: 15px;
+  z-index: 100;
+
+  box-shadow:
+    0 0 10px #ff7b00,
+    0 0 20px rgba(255,123,0,0.5);
+}
+
+/* ================= LEFT / RIGHT ================= */
+
+.experience .left {
+  left: 0;
+}
+
+.experience .right {
+  left: 50%;
+}
+
+/* ================= ARROWS ================= */
+
+/* right arrow */
+.experience .left::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 30px;
+
+  border: medium solid var(--highlight-color);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #f68c09;
+}
+
+/* left arrow */
+.experience .right::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 30px;
+
+  border: medium solid var(--highlight-color);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #f68c09 transparent transparent;
+}
+
+.experience .right::after {
+  left: -9px;
+}
+
+/* ================= CONTENT ================= */
+
+.experience .content {
+  background-color: #fbbd72;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: var(--transition-medium);
+}
+
+.experience .content:hover {
+  box-shadow: 0px 5px 10px var(--highlight-color);
+}
+
+/* ================= TEXT ================= */
+
+.experience .content .tag {
+  font-size: 1.3rem;
+  padding-top: 1rem;
+}
+
+.experience .content .desc {
+  margin-top: 1rem;
+}
+
+.experience .content .desc h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.experience .content .desc p {
+  font-size: 1.2rem;
+}
+
+/* ================= EXTRA BLOCKS ================= */
+
+.exp-content {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exp-block {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: var(--transition-medium);
+}
+
+.exp-block:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(5px);
+}
+
+.exp-block h4 {
+  font-size: 1.5rem;
+}
+
+.exp-block p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.tech-stack {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* ================= LIST ================= */
+
+.experience .desc ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.experience .desc ul li {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+/* ================= MOBILE ================= */
+
+@media screen and (max-width: 600px) {
+
+  .experience .timeline::after {
+    left: 31px;
+  }
+
+  .experience .container {
+    width: 100%;
+    padding-left: 8rem;
+    padding-right: 2rem;
+  }
+
+  .experience .container::before {
+    left: 61px;
+    border-width: 10px 10px 10px 0;
+  }
+
+  .experience .left,
+  .experience .right {
+    left: 0%;
+  }
+
+  .experience .container::after {
+    left: 15px;
+  }
+}
