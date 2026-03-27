@@ -276,3 +276,86 @@ const profileImg = document.querySelector(".home .image img");
 profileImg?.addEventListener("click", () => {
   profileImg.classList.toggle("active-glow");
 });
+
+
+
+
+
+
+
+
+/* =========================================================
+   SMOOTH MAGNETIC BUTTON (NO JITTER 🔥)
+   ========================================================= */
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(btn => {
+
+  let currentX = 0;
+  let currentY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  const strength = 1.25;   // magnetic strength
+  const ease = 1.12;       // smoothness (lower = smoother)
+
+  function animate() {
+    currentX += (targetX - currentX) * ease;
+    currentY += (targetY - currentY) * ease;
+
+    btn.style.transform = `
+      translate(${currentX}px, ${currentY}px)
+      scale(1.05)
+    `;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  btn.addEventListener("mousemove", (e) => {
+
+    if (window.innerWidth < 768) return;
+
+    const rect = btn.getBoundingClientRect();
+
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    /* 🎯 SPOTLIGHT */
+    btn.style.setProperty("--x", `${e.clientX - rect.left}px`);
+    btn.style.setProperty("--y", `${e.clientY - rect.top}px`);
+
+    targetX = x * strength;
+    targetY = y * strength;
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    targetX = 0;
+    targetY = 0;
+  });
+
+  /* ================= RIPPLE ================= */
+  btn.addEventListener("click", (e) => {
+    const rect = btn.getBoundingClientRect();
+
+    const ripple = document.createElement("span");
+    ripple.classList.add("ripple");
+
+    ripple.style.left = `${e.clientX - rect.left}px`;
+    ripple.style.top = `${e.clientY - rect.top}px`;
+
+    btn.appendChild(ripple);
+
+    setTimeout(() => ripple.remove(), 600);
+  });
+
+});
+
+
+
+window.addEventListener("scroll", () => {
+  document.querySelector("header")
+    .classList.toggle("scrolled", window.scrollY > 50);
+});
