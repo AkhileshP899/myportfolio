@@ -709,7 +709,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
+html, body {
+  overflow-x: hidden;
+}
 /* BODY */
 body {
    background: var(--bg-main);
@@ -825,6 +827,11 @@ section {
 }
 
 /* HEADER CONTAINER */
+
+/* =========================================================
+   HEADER (GLASS NAVBAR)
+   ========================================================= */
+
 header {
   position: fixed;
   top: 0;
@@ -839,29 +846,30 @@ header {
   padding: var(--header-padding-y) var(--header-padding-x);
   height: var(--header-height);
 
-  background: rgba(255, 255, 255, 0.7); /* 👈 real glass */
+  /* 🔥 CLEAN GLASS (NO OPACITY BUG) */
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-  /* ❌ REMOVE THIS */
-  /* opacity: 0.95; */
-
   transition: 0.3s ease;
 }
-body.dark header {
-  background: rgba(2, 6, 23, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+/* 🌙 DARK MODE HEADER */
+body.dark header {
+  background: rgba(2, 6, 23, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* LOGO */
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
 header .logo {
   font-size: var(--logo-text-size);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-main);
 }
 
@@ -874,167 +882,152 @@ header .logo:hover {
 }
 
 
-/* NAVBAR WRAPPER */
-header .navbar {
+/* =========================================================
+   RIGHT SIDE GROUP (NAV + ICONS)
+   ========================================================= */
+
+.nav-right {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 2rem;
 }
 
 
-/* NAV LIST */
-header .navbar ul {
+/* =========================================================
+   NAVBAR (DESKTOP)
+   ========================================================= */
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
   list-style: none;
-  display: flex;
-  align-items: center;
 }
 
-
-/* NAV ITEMS */
-header .navbar ul li {
-  margin-left: var(--nav-gap);
-}
-
-
-/* NAV LINKS */
-header .navbar ul li a {
+.navbar ul li a {
   font-size: var(--nav-text-size);
   color: var(--text-main);
   font-weight: 600;
   letter-spacing: var(--nav-letter-spacing);
-
-  transition: var(--duration-fast) var(--ease-default);
 }
 
-
 /* ACTIVE + HOVER */
-header .navbar ul li a.active,
-header .navbar ul li a:hover {
+.navbar ul li a.active,
+.navbar ul li a:hover {
   color: var(--primary);
   border-bottom: var(--nav-border-thin) solid var(--primary);
   padding: 0.5rem 0;
 }
 
 
-/* HAMBURGER */
-#menu {
-  font-size: 3rem;
-  /* optional: can tokenize later */
-  cursor: pointer;
-  color: var(--text-main);
-  display: none;
+/* =========================================================
+   HEADER CONTROLS (🌙 + ☰)
+   ========================================================= */
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 #theme-toggle {
-  font-size: 2.2rem;
-  /* increase from small */
+  font-size: 2rem;
   cursor: pointer;
 }
 
-#theme-toggle:hover {
-  transform: scale(1.15);
+#menu {
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* HOVER EFFECT */
+#theme-toggle:hover,
+#menu:hover {
+  transform: scale(1.1);
 }
 
 
-body.dark header .navbar a {
+/* =========================================================
+   DARK MODE TEXT FIX
+   ========================================================= */
+
+body.dark .navbar a,
+body.dark #menu,
+body.dark #theme-toggle {
   color: var(--text-main);
 }
 
-body.dark #menu {
-  color: var(--text-main);
-}
-/* MOBILE */
+
+/* =========================================================
+   MOBILE NAVBAR (FIXED + SOLID BACKGROUND 🔥)
+   ========================================================= */
+
 @media (max-width: 768px) {
 
+  /* SHOW MENU ICON */
   #menu {
     display: block;
   }
 
-  header .navbar {
+  /* HIDE DESKTOP NAV INITIALLY */
+  .navbar {
     position: fixed;
-    top: var(--header-height);
-    right: -120%;
-    width: var(--mobile-menu-width);
-    height: 100%;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
-    background-color: var(--bg-main);
+    padding: 8rem 2rem;
+
+    /* 🔥 IMPORTANT FIX: NO TRANSPARENCY */
+    background: var(--bg-main);
+
     box-shadow: var(--shadow-medium);
 
-    transition: var(--duration-medium) var(--ease-default);
+    transition: 0.4s ease;
+    z-index: 999;
   }
 
-  header .navbar.nav-toggle {
+  /* ACTIVE MENU */
+  .navbar.nav-toggle {
     right: 0;
   }
 
-  header .navbar ul {
+  /* NAV ITEMS */
+  .navbar ul {
     flex-direction: column;
     width: 100%;
-    padding: var(--mobile-padding);
+    gap: 1.5rem;
   }
 
-  header .navbar ul li {
+  .navbar ul li {
     width: 100%;
-    margin: var(--mobile-padding) 0;
-    border-radius: var(--radius-sm);
-    text-align: center;
   }
 
-  header .navbar ul li a {
+  .navbar ul li a {
     display: block;
     width: 100%;
-    padding: var(--mobile-padding);
-
+    padding: 1rem;
     font-size: var(--mobile-nav-text);
-    color: var(--text-main);
     text-align: left;
   }
 
-  header .navbar ul li a.active,
-  header .navbar ul li a:hover {
-    color: var(--primary);
-    border-bottom: var(--nav-border-thick) solid var(--primary);
-    border-radius: var(--radius-sm);
-  }
-
-  .fa-times {
-    transform: rotate(180deg);
+  /* ACTIVE MOBILE */
+  .navbar ul li a.active,
+  .navbar ul li a:hover {
+    border-bottom: 3px solid var(--primary);
   }
 }
 
 
-
-@media (max-width: 768px) {
-
-  header .navbar {
-    position: fixed;
-    top: 0; /* 🔥 FULL HEIGHT FROM TOP */
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-
-    background: var(--bg-main);
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    padding-top: 8rem;
-
-    z-index: 999; /* 🔥 IMPORTANT */
-
-    transition: 0.4s ease;
-  }
-
-  header .navbar.nav-toggle {
-    right: 0;
-  }
-}
-
+/* =========================================================
+   OVERLAY (CLICK OUTSIDE)
+   ========================================================= */
 
 #nav-overlay {
   position: fixed;
