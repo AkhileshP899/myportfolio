@@ -144,23 +144,19 @@ function showProjects(projects) {
 
         ${project.impact ? `<p class="impact">📊 ${project.impact}</p>` : ""}
 
-        <div class="tech">
-          ${project.tech ? project.tech.map(t => `<span>${t}</span>`).join("") : ""}
-        </div>
-
-        ${project.architecture ? `
-          <p class="architecture">⚙️ ${project.architecture}</p>
-        ` : ""}
-
-        <div class="btns">
-          <a href="${project.links.code}" class="btn" target="_blank">
-            Code <i class="fas fa-code"></i>
-          </a>
-        </div>
-
-      </div>
-
+    <!-- TECH STACK -->
+    <div class="tech">
+      ${project.tech ? project.tech.map(t => `<span>${t}</span>`).join("") : ""}
     </div>
+
+    <!-- PIPELINE / ARCHITECTURE -->
+    ${project.architecture ? `
+      <p class="architecture">⚙️ ${project.architecture}</p>
+    ` : ""}
+
+  </div>
+
+</div>
   </div>
 `)
     .join("");
@@ -209,33 +205,6 @@ function revealProjects() {
   });
 }
 
-
-/* ================= PRELOADER (OPTIONAL CLEAN VERSION) ================= */
-// Uncomment if you want preloader
-/*
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader-container");
-  if (loader) {
-    loader.classList.add("fade-out");
-  }
-});
-*/
-
-
-/* ================= REMOVE DEVTOOLS BLOCK ================= */
-// ❌ Removed intentionally (bad practice)
-
-// Start of Tawk.to Live Chat
-// var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-// (function () {
-//     var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-//     s1.async = true;
-//     s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
-//     s1.charset = 'UTF-8';
-//     s1.setAttribute('crossorigin', '*');
-//     s0.parentNode.insertBefore(s1, s0);
-// })();
-// End of Tawk.to Live Chat
 
 
 
@@ -360,6 +329,141 @@ filterButtons.forEach(btn => {
 });
 
 
+const profileImg = document.querySelector(".home .image img");
+
+profileImg.addEventListener("click", () => {
+  profileImg.classList.toggle("active-glow");
+});
 
 
 
+
+
+/* ================= SHOW PROJECTS ================= */
+function showProjects(projects) {
+  const projectsContainer = document.querySelector("#work .box-container");
+
+  const projectHTML = projects
+    .slice(0, 5)
+    .filter(project => project.category !== "android")
+.map(project => `
+  <div class="box tilt" data-category="${project.category || 'all'}">
+
+    <img src="./assets/images/projects/${project.image}.png" alt="project" />
+
+    <div class="content">
+
+      <div class="tag">
+        <h3>${project.name}</h3>
+      </div>
+
+      <div class="desc">
+        <p>${project.desc}</p>
+
+        ${project.impact ? `<p class="impact">📊 ${project.impact}</p>` : ""}
+
+        <div class="tech">
+          ${project.tech ? project.tech.map(t => `<span>${t}</span>`).join(",  ") : ""}
+        </div>
+
+        ${project.architecture ? `
+          <p class="architecture">⚙️ ${project.architecture}</p>
+        ` : ""}
+
+      </div>
+
+    </div>
+  </div>
+`)
+    .join("");
+
+  projectsContainer.innerHTML = projectHTML;
+
+  /* ================= TILT EFFECT ================= */
+  initTilt();
+
+  /* ================= SCROLL REVEAL ================= */
+  revealProjects();
+}
+
+
+/* ================= FETCH CALLS ================= */
+fetchData().then(showSkills);
+// fetchData("projects").then(showProjects);
+fetchData("projects").then(data => {
+  showProjects(data);
+  initProjectFilter();   // 🔥 IMPORTANT
+});
+
+/* ================= TILT INIT (ONLY ONCE) ================= */
+function initTilt() {
+  const tiltElements = document.querySelectorAll(".tilt");
+
+  if (tiltElements.length) {
+    VanillaTilt.init(tiltElements, {
+      max: 15,
+    });
+  }
+}
+
+
+/* ================= SCROLL REVEAL (GLOBAL USE) ================= */
+function revealProjects() {
+  const sr = ScrollReveal({
+    origin: "top",
+    distance: "80px",
+    duration: 1000,
+    reset: false,
+  });
+
+  sr.reveal(".work .box", {
+    interval: 200,
+  });
+}
+
+
+
+
+const menu = document.getElementById("menu");
+const navbar = document.querySelector(".navbar");
+const overlay = document.getElementById("nav-overlay");
+
+menu.addEventListener("click", () => {
+  menu.classList.toggle("fa-times");
+  navbar.classList.toggle("nav-toggle");
+  overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  menu.classList.remove("fa-times");
+  navbar.classList.remove("nav-toggle");
+  overlay.classList.remove("active");
+});
+
+
+menu.addEventListener("click", () => {
+  menu.classList.toggle("fa-times");
+  navbar.classList.toggle("nav-toggle");
+  overlay.classList.toggle("active");
+
+  document.body.classList.toggle("no-scroll");
+});
+
+/* 🔥 CLICK OUTSIDE = CLOSE MENU */
+overlay.addEventListener("click", () => {
+  closeMenu();
+});
+
+/* 🔥 ALSO close when clicking any nav link */
+document.querySelectorAll(".navbar a").forEach(link => {
+  link.addEventListener("click", () => {
+    closeMenu();
+  });
+});
+
+function closeMenu() {
+  menu.classList.remove("fa-times");
+  navbar.classList.remove("nav-toggle");
+  overlay.classList.remove("active");
+  document.body.classList.remove("no-scroll");
+}
