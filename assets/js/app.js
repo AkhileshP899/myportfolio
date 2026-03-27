@@ -17,7 +17,7 @@ function loadParticles(color) {
   particlesJS("particles-js", {
     particles: {
       number: {
-        value: 100,
+        value: 80,
         density: { enable: true, value_area: 900 }
       },
 
