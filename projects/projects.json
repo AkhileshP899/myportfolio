@@ -1,4 +1,51 @@
-[{
+[
+
+  {
+    "name": "Oracle → Snowflake Data Migration Pipeline",
+    "desc": "Built end-to-end ETL pipeline for migrating enterprise data using AWS DMS and S3.",
+    "impact": "Migrated 500+ tables with 99.9% accuracy",
+    "tech": ["AWS DMS", "S3", "Snowflake", "Redshift"],
+    "architecture": "Oracle → DMS → S3 → Snowflake → Redshift Validation",
+
+    "image": "Oracle_to_snowflake",
+    "category": "snowflake"
+  },
+
+  {
+    "name": "Azure Data Engineering Pipeline",
+    "desc": "Designed scalable ETL pipelines using Azure Data Factory and Databricks to process and transform large datasets.",
+    "impact": "Processed large-scale data with optimized transformations and improved pipeline efficiency",
+    "tech": ["Azure Data Factory", "Databricks", "ADLS", "Snowflake", "PySpark"],
+    "architecture": "ADLS → ADF → Databricks (PySpark) → Snowflake",
+
+    "image": "Azure_Data_Engineering_Tools",
+    "category": "azure"
+  },
+
+  {
+    "name": "Real-Time Data Ingestion using Snowpipe",
+    "desc": "Implemented real-time data ingestion pipeline using Snowpipe with automated file detection and continuous data loading.",
+    "impact": "Enabled near real-time data availability with automated ingestion workflows",
+    "tech": ["Snowflake", "Snowpipe", "ADLS", "JSON", "Schema Inference"],
+    "architecture": "ADLS → Snowpipe → Snowflake (Real-time)",
+
+    "image": "snowpipe",
+    "category": "snowflake"
+  },
+
+  {
+    "name": "Campaign Data Processing System",
+    "desc": "Built and supported data pipelines for campaign platforms handling audience targeting and marketing analytics.",
+    "impact": "Processed campaign data for large-scale retail systems ensuring accurate targeting and execution",
+    "tech": ["Azure", "ADF", "Snowflake", "SQL", "Databricks"],
+    "architecture": "Source → ADF → Databricks → Snowflake → Campaign Platforms",
+ 
+    "image": "campaign",
+    "category": "azure"
+  },
+
+
+{
         "name": "LinkCampus - A Social Platform",
         "desc": "LinkCampus is an innovative social platform designed exclusively for college students. It leverages the power of the MERN stack to create a robust and dynamic environment with a real-time chat functionality.",
         "image": "linkcampus",
