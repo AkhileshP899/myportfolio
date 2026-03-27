@@ -5,57 +5,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 🔥 SEO (RECRUITER FOCUSED) -->
   <meta name="keywords"
-    content="Akhilesh Prajapati, Data Engineer, Snowflake Developer, Azure Data Engineer, ETL Pipeline, Data Warehouse, AWS, ADF, Databricks" />
-
+    content="Akhilesh Prajapati, portfolio, Akhilesh, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
   <meta name="description"
-    content="Akhilesh Prajapati - Data Engineer specializing in Snowflake, Azure, and ETL pipelines. Built scalable data platforms, migrated 500+ tables, and designed real-time data ingestion systems." />
-
-  <meta name="author" content="Akhilesh Prajapati">
-
-  <!-- 🔥 TITLE (VERY IMPORTANT) -->
-  <title>Akhilesh Prajapati | Data Engineer | Snowflake | Azure</title>
-
-  <!-- 🔥 FAVICON -->
-  <link id="favicon" rel="shortcut icon" href="./assets/images/Img.png" type="image/x-png">
-
-  <!-- 🔥 MAIN CSS -->
+    content="Welcome to Akhilesh's Portfolio. Full-Stack Web Developer and Android App Developer" />
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 🔥 FONT AWESOME (ONLY ONE VERSION) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- 🔥 GOOGLE FONTS (OPTIONAL OPTIMIZATION) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon -->
+  <link id='favicon' rel="shortcut icon" href="./assets/images/Img.png" type="image/x-png">
+  <title>Akhilesh Prajapati</title>
 
 </head>
 <!-- oncontextmenu="return false" -->
 
 <body>
 
-  <!-- pre loader -->
-  <!-- <div class="loader-container">
-    <img draggable="false" src="./assets/images/preloader.gif" alt="">
-  </div> -->
-
   <!-- navbar starts -->
   <header>
     <a href="/" class="logo"><i class="fa-solid fa-bolt"></i> Akhilesh <i class="fa-solid fa-bolt"></i></a>
 
-
     <div id="menu" class="fas fa-bars"></div>
-
     <nav class="navbar">
       <ul>
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Tech Stack</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#work">Projects</a></li>
+        <li><a href="#work">Project</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
@@ -66,15 +49,14 @@
   </header>
   <!-- navbar ends -->
 
+  <!-- 🔥 ADD HERE -->
+<div id="nav-overlay"></div>
 
   <!-- hero section starts -->
   <section class="home" id="home">
     <div id="particles-js"></div>
 
-    <div class="data-flow"></div>
-
     <div class="content">
-      <!-- 🔥 MAIN HEADING -->
       <h2>Hi There,<br /> I'm <span>Akhilesh Prajapati</span></h2>
       <p>i am into <span class="typing-text"></span></p>
       <a href="#about" class="btn"><span>About Me</span>
@@ -104,12 +86,15 @@
       </div>
     </div>
     <div class="image">
-      <img draggable="false" class="tilt" src="./assets/images/myImg5.png" alt="Akhilesh Prajapati">
+      <div class="profile-circle">
+        <img draggable="false" class="tilt" src="./assets/images/myImg5.png" alt="">
+      </div>
     </div>
-
-
   </section>
+  <!-- hero section ends -->
 
+
+  <!-- about section starts -->
   <!-- about section starts -->
   <section class="about" id="about">
 
@@ -134,7 +119,11 @@
 
         <!-- 🔥 TECH STACK LINE -->
         <p class="hero-impact">
-          AWS | Azure | Snowflake | ETL Pipelines | Data Warehousing
+          <span>AWS</span>
+          <span>Azure</span>
+          <span>Snowflake</span>
+          <span>ETL Pipelines</span>
+          <span>Data Warehousing</span>
         </p>
 
         <!-- 🔥 SHORT INTRO (IMPORTANT) -->
@@ -184,33 +173,30 @@
   </section>
   <!-- about section ends -->
 
-
-
+  <!-- skills section starts -->
   <section class="skills" id="skills">
-
     <h2 class="heading">Tech <span>Stack</span></h2>
 
-    <div class="skills-wrapper">
+    <div class="tech-stack">
 
-
-      <div class="skill-category">
+      <div class="stack-card">
         <h3>☁️ Cloud Platforms</h3>
-        <div class="skill-items">
+        <div class="tags">
           <span>AWS (S3, DMS)</span>
           <span>Azure (ADF, ADLS)</span>
         </div>
       </div>
 
-      <div class="skill-category">
+      <div class="stack-card">
         <h3>❄️ Data Warehousing</h3>
-        <div class="skill-items">
+        <div class="tags">
           <span>Snowflake</span>
         </div>
       </div>
 
-      <div class="skill-category">
-        <h3>🔄 Data Engineering</h3>
-        <div class="skill-items">
+      <div class="stack-card">
+        <h3>⚙️ Data Engineering</h3>
+        <div class="tags">
           <span>Azure Data Factory</span>
           <span>Databricks</span>
           <span>Snowpipe</span>
@@ -218,100 +204,77 @@
         </div>
       </div>
 
-      <div class="skill-category">
+      <div class="stack-card">
         <h3>💻 Programming</h3>
-        <div class="skill-items">
+        <div class="tags">
           <span>SQL</span>
           <span>Python</span>
         </div>
       </div>
 
-      <div class="skill-category">
-        <h3>📊 Data Concepts</h3>
-        <div class="skill-items">
+      <div class="stack-card">
+        <h3>🧠 Data Concepts</h3>
+        <div class="tags">
           <span>Data Modeling</span>
           <span>ETL Pipelines</span>
-          <span>CDC (Change Data Capture)</span>
+          <span>CDC</span>
           <span>Data Validation</span>
         </div>
       </div>
 
     </div>
-
   </section>
+  <!-- skills section ends -->
 
 
-
-  <!-- education section starts -->
   <!-- education section starts -->
   <section class="education" id="education">
 
-    <h2 class="heading">
-      <i class="fas fa-graduation-cap"></i> Education
-      <!-- & <span>Certification</span> -->
-    </h2>
+    <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
 
-    <!-- 🔥 REMOVE GENERIC QUOTE -->
-    <!-- <p class="qoute">Education is the key to unlocking a world of opportunities.</p> -->
+    <p class="qoute">Education is the key to unlocking a world of opportunities.</p>
 
     <div class="box-container">
 
-      <!-- 🎓 Degree -->
       <div class="box">
         <div class="image">
-          <img draggable="false" src="./assets/images/educat/college.jpeg" alt="College">
+          <img draggable="false" src="./assets/images/educat/college.jpeg" alt="">
         </div>
         <div class="content">
-          <h3>Bachelor of Engineering – Computer Engineering</h3>
-          <p>Lokmanya Tilak College of Engineering, Mumbai</p>
-          <h4>2019 – 2023</h4>
+          <h3>Bachelor of Engineering in Computer Engineering</h3>
+          <p>Lokmanya Tilak College Of Engineering</p>
+          <h4>2019-2023 | Completed</h4>
         </div>
       </div>
 
-      <!-- 🧪 HSC -->
       <div class="box">
         <div class="image">
-          <img draggable="false" src="./assets/images/educat/schoolHSC.jpg" alt="HSC">
+          <img draggable="false" src="./assets/images/educat/schoolHSC.jpg" alt="">
         </div>
         <div class="content">
-          <h3>Higher Secondary (Science)</h3>
-          <p>Podar International School</p>
-          <h4>2017 – 2019</h4>
+          <h3>Higher Secondary Certificate (HSC) Science </h3>
+          <p>Podar International School </p>
+          <h4>2017-2019 | Completed</h4>
         </div>
       </div>
 
-      <!-- 🏫 SSC -->
       <div class="box">
         <div class="image">
-          <img draggable="false" src="./assets/images/educat/schoolSSC.jpg" alt="SSC">
+          <img draggable="false" src="./assets/images/educat/schoolSSC.jpg" alt="">
         </div>
         <div class="content">
-          <h3>Secondary School (SSC)</h3>
+          <h3>Secondary School Certificate (SSC) </h3>
           <p>Karthika High School & Junior College</p>
-          <h4>2005 – 2017</h4>
+          <h4>2005-2017 | Completed</h4>
         </div>
       </div>
-
-      <!-- ❄️ CERTIFICATION (VERY IMPORTANT ADDITION) -->
-      <!-- <div class="box">
-      <div class="image">
-        <img draggable="false" src="./assets/images/snowflake.png" alt="Snowflake Certification">
-      </div>
-      <div class="content">
-        <h3>Snowflake SnowPro Core Certification</h3>
-        <p>Certified Snowflake Developer & Data Engineer</p>
-        <h4>Issued by Snowflake</h4>
-      </div>
-    </div> -->
 
     </div>
-
   </section>
   <!-- education section ends -->
 
 
   <!-- work project section starts -->
-
   <section class="work" id="work">
 
     <h2 class="heading">
@@ -324,65 +287,13 @@
       <button data-filter="azure">Azure</button>
       <button data-filter="snowflake">Snowflake</button>
     </div>
+
     <div class="box-container">
-      <!-- Projects will be injected via JS -->
-    </div>
-
-
-  </section>
-
-
-
-
-  <section class="architecture" id="architecture">
-
-    <h2 class="heading"> Data Pipeline <span>Architecture</span> </h2>
-
-    <div class="arch-container">
-
-      <!-- Project 1 -->
-      <div class="arch-card">
-        <h3>🏥 Healthcare Data Migration (Pfizer)</h3>
-        <div class="pipeline-line"></div>
-        <div class="pipeline-tags">
-          <span>Oracle</span>
-          <span>AWS DMS</span>
-          <span>S3</span>
-          <span>Snowflake</span>
-        </div>
-        <img src="assets/images/architecture/OracleToSnowflakeArchitecture.png" alt="pipeline">
-
-        <p>
-          Designed an end-to-end data pipeline to migrate Oracle data into Snowflake using AWS services.
-        </p>
-
-        <ul>
-          <li>Oracle → AWS DMS → S3 → Snowflake</li>
-          <li>Validation using Redshift Spectrum</li>
-          <li>Handled encoding & data discrepancies</li>
-        </ul>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="arch-card">
-        <h3>🛒 Retail Campaign Data Pipeline (Kroger)</h3>
-        <div class="pipeline-line"></div>
-        <img src="assets/images/architecture/CampaignPipelinearchitecture.png" alt="pipeline">
-
-        <p>
-          Built scalable Azure-based data pipelines for campaign analytics and targeting systems.
-        </p>
-
-        <ul>
-          <li>ADF → ADLS → Databricks → Snowflake</li>
-          <li>Processed campaign data (CAAP, Prism, Bullseye)</li>
-          <li>Production support & validation workflows</li>
-        </ul>
-      </div>
-
+      <!-- JS will inject -->
     </div>
 
   </section>
+
 
 
 
@@ -511,66 +422,69 @@
   <!-- experience section ends -->
 
 
+
+
+
   <!-- contact section starts -->
   <section class="contact" id="contact">
 
     <h2 class="heading">
-      <i class="fas fa-headset"></i> Let's <span>Connect</span>
+      <i class="fas fa-headset"></i> Get in <span>Touch</span>
     </h2>
-
-    <!-- 🔥 SHORT MESSAGE -->
-    <p class="contact-text">
-      Open to Data Engineer opportunities, collaborations, and discussions around data platforms and cloud solutions.
-    </p>
 
     <div class="container">
       <div class="content">
 
-        <!-- 🔥 IMAGE -->
+        <!-- LEFT SIDE (IMAGE / VISUAL) -->
         <div class="image-box">
-          <img draggable="false" src="./assets/images/contact1.png" alt="Contact">
+          <img draggable="false" src="./assets/images/contact1.png" alt="Contact Illustration">
         </div>
 
-        <!-- 🔥 CONTACT OPTIONS -->
-        <div class="contact-info">
-          <div class="contact-items">
+        <!-- RIGHT SIDE (FORM) -->
+        <form id="contact-form">
 
-            <div class="contact-item">
+          <div class="form-group">
+
+            <div class="field">
+              <input type="text" name="name" placeholder=" " required>
+              <label>Your Name</label>
+              <i class="fas fa-user"></i>
+            </div>
+
+            <div class="field">
+              <input type="email" name="email" placeholder=" " required>
+              <label>Your Email</label>
               <i class="fas fa-envelope"></i>
-              <span>Akhileshprajapati0220@gmail.com</span>
             </div>
 
-            <div class="contact-item">
-              <i class="fab fa-linkedin"></i>
-              <span>LinkedIn Profile</span>
+            <div class="field">
+              <input type="text" name="subject" placeholder=" ">
+              <label>Subject</label>
+              <i class="fas fa-tag"></i>
             </div>
 
-            <div class="contact-item">
-              <i class="fab fa-github"></i>
-              <span>GitHub Projects</span>
-            </div>
-
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Mumbai, India</span>
+            <div class="field textarea">
+              <textarea name="message" placeholder=" " required></textarea>
+              <label>Your Message</label>
+              <i class="fas fa-comment-dots"></i>
             </div>
 
           </div>
 
-        </div>
+          <!-- BUTTON -->
+          <div class="button-area">
+            <button type="submit">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
 
-        <!-- 🔥 CTA BUTTON -->
-        <div class="contact-btn">
-          <a href="mailto:akhileshprajapati0220@gmail.com" class="btn">
-            <span>Send Email</span>
-          </a>
-        </div>
+        </form>
 
       </div>
     </div>
-
   </section>
   <!-- contact section ends -->
+
 
   <!-- footer section starts -->
   <section class="footer">
@@ -645,9 +559,6 @@
     integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
   <!-- scroll reveal anim -->
   <script src="https://unpkg.com/scrollreveal"></script>
 
@@ -655,7 +566,6 @@
   <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
   <script src="./assets/js/script.js"></script>
-
 
 </body>
 
