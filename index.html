@@ -28,39 +28,39 @@
 <body>
 
   <!-- navbar starts -->
-<header>
+  <header>
 
-  <a href="/" class="logo">
-    <i class="fa-solid fa-bolt"></i> Akhilesh <i class="fa-solid fa-bolt"></i>
-  </a>
+    <a href="/" class="logo">
+      <i class="fa-solid fa-bolt"></i> Akhilesh <i class="fa-solid fa-bolt"></i>
+    </a>
 
-  <!-- 🔥 RIGHT SIDE GROUP -->
-  <div class="nav-right">
-    
-    <nav class="navbar">
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#work">Project</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- 🔥 RIGHT SIDE GROUP -->
+    <div class="nav-right">
 
-    <div class="header-controls">
-      <i id="theme-toggle" class="fas fa-moon"></i>
-      <div id="menu" class="fas fa-bars"></div>
+      <nav class="navbar">
+        <ul>
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#work">Project</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-controls">
+        <i id="theme-toggle" class="fas fa-moon"></i>
+        <div id="menu" class="fas fa-bars"></div>
+      </div>
+
     </div>
 
-  </div>
-
-</header>
+  </header>
   <!-- navbar ends -->
 
   <!-- 🔥 ADD HERE -->
-<div id="nav-overlay"></div>
+  <div id="nav-overlay"></div>
 
   <!-- hero section starts -->
   <section class="home" id="home">
@@ -296,10 +296,12 @@
       <button data-filter="aws">AWS</button>
       <button data-filter="azure">Azure</button>
       <button data-filter="snowflake">Snowflake</button>
+      <button data-filter="etl">ETL</button>
     </div>
 
     <div class="box-container">
       <!-- JS will inject -->
+       
     </div>
 
   </section>
@@ -577,6 +579,7 @@
 
   <script src="./assets/js/script.js"></script>
 
+  <div id="projectModal" class="project-modal"></div>
 </body>
 
 </html>
