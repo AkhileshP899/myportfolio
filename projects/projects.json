@@ -1,86 +1,246 @@
-[
+[{
+        "id": "oracle-snowflake",
 
-  {
-    "name": "Oracle → Snowflake Data Migration Pipeline",
-    "desc": "Built end-to-end ETL pipeline for migrating enterprise data using AWS DMS and S3.",
-    "impact": "Migrated 500+ tables with 99.9% accuracy",
-    "tech": ["AWS DMS", "S3", "Snowflake", "Redshift"],
-    "architecture": "Oracle → DMS → S3 → Snowflake → Redshift Validation",
+        "title": "Oracle → Snowflake Data Migration Pipeline",
 
-    "image": "Oracle_to_snowflake",
-    "category": "snowflake"
-  },
+        "desc": "Designed and implemented an enterprise-scale data migration pipeline to move legacy Oracle data into Snowflake using AWS services. Ensured high data integrity, scalability, and performance across large datasets.",
 
-  {
-    "name": "Azure Data Engineering Pipeline",
-    "desc": "Designed scalable ETL pipelines using Azure Data Factory and Databricks to process and transform large datasets.",
-    "impact": "Processed large-scale data with optimized transformations and improved pipeline efficiency",
-    "tech": ["Azure Data Factory", "Databricks", "ADLS", "Snowflake", "PySpark"],
-    "architecture": "ADLS → ADF → Databricks (PySpark) → Snowflake",
+        "highlights": [
+            "Migrated 500+ tables with 99.9% data accuracy",
+            "Handled multi-language encoding (UTF-8, Japanese, special characters)",
+            "Built validation layer using Redshift Spectrum",
+            "Optimized Snowflake loading performance and file formats"
+        ],
 
-    "image": "Azure_Data_Engineering_Tools",
-    "category": "azure"
-  },
+        "impact": {
+            "scale": "500+ tables",
+            "accuracy": "99.9%",
+            "volume": "Millions of records",
+            "performance": "Optimized load time and query efficiency"
+        },
 
-  {
-    "name": "Real-Time Data Ingestion using Snowpipe",
-    "desc": "Implemented real-time data ingestion pipeline using Snowpipe with automated file detection and continuous data loading.",
-    "impact": "Enabled near real-time data availability with automated ingestion workflows",
-    "tech": ["Snowflake", "Snowpipe", "ADLS", "JSON", "Schema Inference"],
-    "architecture": "ADLS → Snowpipe → Snowflake (Real-time)",
+        "architecture": {
+            "flow": [
+                "Oracle",
+                "AWS DMS",
+                "Amazon S3",
+                "Snowflake",
+                "Redshift Spectrum"
+            ],
+            "description": "Data extracted from Oracle using AWS DMS, staged in S3, loaded into Snowflake using COPY INTO, and validated using Redshift Spectrum."
+        },
 
-    "image": "snowpipe",
-    "category": "snowflake"
-  },
+        "tech": ["AWS DMS", "S3", "Snowflake", "Redshift"],
 
-  {
-    "name": "Campaign Data Processing System",
-    "desc": "Built and supported data pipelines for campaign platforms handling audience targeting and marketing analytics.",
-    "impact": "Processed campaign data for large-scale retail systems ensuring accurate targeting and execution",
-    "tech": ["Azure", "ADF", "Snowflake", "SQL", "Databricks"],
-    "architecture": "Source → ADF → Databricks → Snowflake → Campaign Platforms",
- 
-    "image": "campaign",
-    "category": "azure"
-  },
+        "features": [
+            "Automated bulk data loading using COPY INTO",
+            "Schema mapping and transformation handling",
+            "Data validation framework across systems",
+            "Error handling for encoding and delimiter issues"
+        ],
 
+        "challenges": [
+            "Handling mixed character encoding (Japanese, Chinese, special symbols)",
+            "Maintaining consistency across environments (Dev, Stage, Prod)",
+            "Managing large-scale data validation efficiently"
+        ],
 
-{
-        "name": "LinkCampus - A Social Platform",
-        "desc": "LinkCampus is an innovative social platform designed exclusively for college students. It leverages the power of the MERN stack to create a robust and dynamic environment with a real-time chat functionality.",
-        "image": "linkcampus",
-        "category": "mern",
-        "links": {
-            "code": "https://github.com/Akhilesh828"
-        }
-    },
-    {
-        "name": "DisKas - Forum Platform",
-        "desc": "DisKas is an online forum platform designed for programmers to ask questions and seek answers related to programming languages and development, built using a combination of PHP, MySQL, and JavaScript ",
-        "image": "diskas",
-        "category": "mern",
-        "links": {
-            "code": "https://github.com/Akhilesh828"
-        }
-    },
-    {
-        "name": "NetFlix Clone",
-        "desc": "NetFlix clone built using Next.js, Magic Authentication, Hasura Database & GraphQL.",
-        "image": "netflix",
-        "category": "mern",
-        "links": {
-            "code": "https://github.com/Akhilesh828"
-        }
+        "solutions": [
+            "Created multiple file formats for different encodings",
+            "Implemented validation joins",
+            "Standardized deployment process across environments"
+        ],
+
+        "image": "Oracle_to_snowflake",
+        "category": ["snowflake", "aws", "etl"]
     },
 
+
+
     {
-        "name": "NewPortal",
-        "desc": "NewsPortal built on the Laravel framework. The platform provides real-time updates on the latest news across a wide range of categories.",
-        "image": "newsportal",
-        "category": "mern",
-        "links": {
-            "code": "https://github.com/Akhilesh828"
-        }
+        "id": "azure-data-pipeline",
+
+        "title": "Azure Data Engineering Pipeline",
+
+        "desc": "Designed scalable ETL pipelines using Azure Data Factory and Databricks to process and transform large datasets.",
+
+        "highlights": [
+            "Built scalable ETL pipelines using Azure services",
+            "Optimized data transformation workflows using Databricks",
+            "Handled large-scale datasets efficiently",
+            "Improved pipeline performance and reliability"
+        ],
+
+        "impact": {
+            "scale": "Large-scale data",
+            "accuracy": "High reliability",
+            "volume": "Enterprise datasets",
+            "performance": "Optimized transformations"
+        },
+
+        "architecture": {
+            "flow": [
+                "ADLS",
+                "ADF",
+                "Databricks (PySpark)",
+                "Snowflake"
+            ],
+            "description": "Data ingested from ADLS, processed using Azure Data Factory and Databricks, and loaded into Snowflake for analytics."
+        },
+
+        "tech": [
+            "Azure Data Factory",
+            "Databricks",
+            "ADLS",
+            "Snowflake",
+            "PySpark"
+        ],
+
+        "features": [
+            "End-to-end ETL pipeline orchestration",
+            "Data transformation using PySpark",
+            "Integration with Snowflake for analytics",
+            "Scalable and modular pipeline design"
+        ],
+
+        "challenges": [
+            "Handling large data volumes efficiently",
+            "Optimizing transformation performance",
+            "Ensuring pipeline reliability and monitoring"
+        ],
+
+        "solutions": [
+            "Used Databricks for distributed processing",
+            "Optimized ADF pipelines for performance",
+            "Implemented monitoring and error handling mechanisms"
+        ],
+
+        "image": "Azure_Data_Engineering_Tools",
+        "category": ["azure", "etl"]
+    },
+
+    {
+        "id": "snowpipe-realtime",
+
+        "title": "Real-Time Data Ingestion using Snowpipe",
+
+        "desc": "Implemented real-time data ingestion pipeline using Snowpipe with automated file detection and continuous data loading.",
+
+        "highlights": [
+            "Enabled near real-time data ingestion using Snowpipe",
+            "Automated file detection and loading",
+            "Handled semi-structured JSON data",
+            "Improved data availability for analytics"
+        ],
+
+        "impact": {
+            "scale": "Continuous ingestion",
+            "accuracy": "Near real-time",
+            "volume": "Streaming data",
+            "performance": "Low-latency ingestion"
+        },
+
+        "architecture": {
+            "flow": [
+                "ADLS",
+                "Snowpipe",
+                "Snowflake"
+            ],
+            "description": "Files land in ADLS, Snowpipe detects and ingests them automatically into Snowflake for real-time analytics."
+        },
+
+        "tech": [
+            "Snowflake",
+            "Snowpipe",
+            "ADLS",
+            "JSON",
+            "Schema Inference"
+        ],
+
+        "features": [
+            "Automated ingestion using Snowpipe",
+            "Schema inference for semi-structured data",
+            "Continuous data loading",
+            "Minimal manual intervention"
+        ],
+
+        "challenges": [
+            "Handling schema variations in JSON data",
+            "Ensuring reliable file detection",
+            "Managing ingestion latency"
+        ],
+
+        "solutions": [
+            "Used schema inference and flexible structures",
+            "Configured event-based ingestion triggers",
+            "Optimized Snowpipe configuration"
+        ],
+
+        "image": "snowpipe",
+        "category": ["snowflake", "etl"]
+    },
+
+    {
+        "id": "campaign-data-system",
+
+        "title": "Campaign Data Processing System",
+
+        "desc": "Built and supported data pipelines for campaign platforms handling audience targeting and marketing analytics.",
+
+        "highlights": [
+            "Processed campaign data for retail systems",
+            "Handled audience targeting workflows",
+            "Supported marketing analytics pipelines",
+            "Ensured accurate campaign execution"
+        ],
+
+        "impact": {
+            "scale": "Retail-scale systems",
+            "accuracy": "High targeting accuracy",
+            "volume": "Large campaign datasets",
+            "performance": "Efficient pipeline execution"
+        },
+
+        "architecture": {
+            "flow": [
+                "Source",
+                "ADF",
+                "Databricks",
+                "Snowflake",
+                "Campaign Platforms"
+            ],
+            "description": "Data flows from source systems through ADF and Databricks, processed and stored in Snowflake, and consumed by campaign platforms."
+        },
+
+        "tech": [
+            "Azure",
+            "ADF",
+            "Snowflake",
+            "SQL",
+            "Databricks"
+        ],
+
+        "features": [
+            "Campaign data pipeline orchestration",
+            "Audience targeting logic implementation",
+            "Integration with campaign platforms",
+            "Data validation and monitoring"
+        ],
+
+        "challenges": [
+            "Handling complex campaign logic",
+            "Ensuring data consistency across systems",
+            "Managing large-scale campaign data"
+        ],
+
+        "solutions": [
+            "Implemented structured data pipelines",
+            "Used Snowflake for centralized storage",
+            "Validated data across multiple stages"
+        ],
+
+        "image": "campaign",
+        "category": ["azure", "data"]
     }
 
 ]
