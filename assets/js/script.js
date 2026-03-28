@@ -123,82 +123,207 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ================= SHOW PROJECTS ================= */
-  function showProjects(projects) {
-    const projectsContainer = document.querySelector("#work .box-container");
+function showProjects(projects) {
+  const projectsContainer = document.querySelector("#work .box-container");
 
-    const projectHTML = projects
-      .slice(0, 5)
-      .filter(project => project.category !== "android")
-      .map(project => `
-        <div class="box tilt" data-category="${project.category || 'all'}">
+  const projectHTML = projects
+    .slice(0, 5)
+    .filter(project => !project.category?.includes("android"))
+    .map((project, index) => {
 
-          <img src="./assets/images/projects/${project.image}.png" alt="project" />
+      const title = project.title || "Project";
+      const highlights = project.highlights?.slice(0, 2) || [];
+      const tech = project.tech || [];
+
+      return `
+        <div class="box tilt"
+             data-category="${project.category?.join(" ") || 'all'}">
+
+          <img src="./assets/images/projects/${project.image}.png" alt="${title}" />
 
           <div class="content">
-            <div class="tag">
-              <h3>${project.name}</h3>
+
+            <h3>${title}</h3>
+
+            <ul class="highlights">
+              ${highlights.map(h => `<li>✔ ${h}</li>`).join("")}
+            </ul>
+
+            <div class="tech">
+              ${tech.map(t => `<span>${t}</span>`).join("")}
             </div>
 
-            <div class="desc">
-              <p>${project.desc}</p>
+            <!-- 🔥 BUTTON -->
+            <button class="view-btn" data-index="${index}">
+              View Details →
+            </button>
 
-              ${project.impact ? `<p class="impact">📊 ${project.impact}</p>` : ""}
-
-              <div class="tech">
-                ${project.tech ? project.tech.map(t => `<span>${t}</span>`).join("") : ""}
-              </div>
-
-              ${project.architecture ? `
-                <p class="architecture">⚙️ ${project.architecture}</p>
-              ` : ""}
-            </div>
           </div>
         </div>
-      `)
-      .join("");
+      `;
+    })
+    .join("");
 
-    projectsContainer.innerHTML = projectHTML;
+  projectsContainer.innerHTML = projectHTML;
 
-    initTilt();
-    revealProjects();
-  }
-
-
-  /* ================= PROJECT FILTER ================= */
-  function initProjectFilter() {
-    const filterButtons = document.querySelectorAll(".project-filter button");
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-
-        filterButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        const filter = btn.getAttribute("data-filter");
-        const projectBoxes = document.querySelectorAll(".work .box");
-
-        projectBoxes.forEach(box => {
-          const category = box.getAttribute("data-category");
-
-          if (filter === "all" || category === filter) {
-            box.style.display = "block";
-          } else {
-            box.style.display = "none";
-          }
-        });
-
-      });
+  // ✅ FIX: inside function (projects available)
+  document.querySelectorAll(".view-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const index = btn.getAttribute("data-index");
+      openProjectModal(projects[index]);
     });
-  }
+  });
+
+  initTilt();
+  revealProjects();
+}
 
 
-  /* ================= INIT PROJECTS ================= */
-  fetchData().then(showSkills);
+function openProjectModal(project) {
 
-  fetchData("projects").then(data => {
+  const modal = document.getElementById("projectModal");
+
+  const architecture = project.architecture?.flow?.join(" → ");
+  const tech = project.tech || [];
+  const highlights = project.highlights || [];
+
+  modal.innerHTML = `
+    <div class="modal-content">
+
+      <!-- 🔥 STICKY HEADER -->
+      <div class="modal-header">
+        <h2>${project.title}</h2>
+        <span class="close-btn">&times;</span>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="modal-grid">
+
+          <!-- ================= LEFT ================= -->
+          <div class="modal-left">
+
+            <p class="modal-desc">${project.desc}</p>
+
+            ${highlights.length ? `
+              <h4>✨ Highlights</h4>
+              <ul>
+                ${highlights.map(h => `<li>✔ ${h}</li>`).join("")}
+              </ul>
+            ` : ""}
+
+            ${project.features ? `
+              <h4>🚀 Features</h4>
+              <ul>
+                ${project.features.map(f => `<li>${f}</li>`).join("")}
+              </ul>
+            ` : ""}
+
+          </div>
+
+          <!-- ================= RIGHT ================= -->
+          <div class="modal-right">
+
+            ${project.impact ? `
+              <h4>📊 Impact</h4>
+              <p>
+                ${project.impact.scale || ""} |
+                ${project.impact.accuracy || ""} |
+                ${project.impact.volume || ""}
+              </p>
+            ` : ""}
+
+            ${tech.length ? `
+              <h4>🛠 Tech Stack</h4>
+              <div class="tech">
+                ${tech.map(t => `<span>${t}</span>`).join("")}
+              </div>
+            ` : ""}
+
+            ${architecture ? `
+              <h4>⚙️ Architecture</h4>
+              <p>${architecture}</p>
+            ` : ""}
+
+            ${project.challenges ? `
+              <h4>⚠️ Challenges</h4>
+              <ul>
+                ${project.challenges.map(c => `<li>${c}</li>`).join("")}
+              </ul>
+            ` : ""}
+
+            ${project.solutions ? `
+              <h4>✅ Solutions</h4>
+              <ul>
+                ${project.solutions.map(s => `<li>${s}</li>`).join("")}
+              </ul>
+            ` : ""}
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  `;
+
+  modal.classList.add("active");
+
+  // ✅ close button
+  modal.querySelector(".close-btn").onclick = () => {
+    modal.classList.remove("active");
+  };
+
+  // ✅ click outside
+  modal.onclick = (e) => {
+    if (e.target.id === "projectModal") {
+      modal.classList.remove("active");
+    }
+  };
+}
+  /* ================= PROJECT FILTER ================= */
+
+function initProjectFilter() {
+  const filterButtons = document.querySelectorAll(".project-filter button");
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+      const projectBoxes = document.querySelectorAll(".work .box");
+
+      projectBoxes.forEach(box => {
+        const categories = box.getAttribute("data-category").split(" ");
+
+        if (filter === "all" || categories.includes(filter)) {
+          box.style.display = "block";
+        } else {
+          box.style.display = "none";
+        }
+      });
+
+    });
+  });
+}
+
+
+/* ================= INIT PROJECTS ================= */
+
+fetchData()
+  .then(showSkills)
+  .catch(err => console.error("Skills load error:", err));
+
+fetchData("projects")
+  .then(data => {
     showProjects(data);
     initProjectFilter();
-  });
+  })
+  .catch(err => console.error("Projects load error:", err));
+
 
 
   /* ================= TILT ================= */
